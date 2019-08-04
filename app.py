@@ -160,7 +160,7 @@ def create_app(test_config = None):
     def pingpong():
         return "pong"
 
-    @app.route("/",methods=['POST'])
+    @app.route("/main",methods=['GET', 'POST'])
     def main():
         a = webbrowser.open('http://localhost:5000/signup.html')
         return a
