@@ -1,0 +1,56 @@
+{% block content %}
+{% if session['loged_in'] %}
+<p>HELLO EDU DRIVE!</p>
+  <div class ='follow list'>
+    <h1>Follow List</h1>
+       <form class='follow or unfollow' action='http://localhost:5000/followbutton' method='POST'>
+         <input type="button" name="followbutton" placeholder="follow">
+       </form>
+     <ul>
+       <li>id1</li>
+       <li>id2</li>
+     </ul>
+   
+    
+  </div>
+  <div class = 'timeline'>
+
+  </div>
+  <div class = 'writetweet'>
+    <form class="tweet" action="http://localhost:5000/tweet" method="POST">
+      <input type="text" name="tweet1" placeholder="writetweet">
+     
+      <input type="submit" name="" placeholder="tweet">
+    </form> 
+  </div>
+
+  </div>
+  <div class = 'follow'>
+    <form class="follow" action="http://localhost:5000/follow" method="POST">
+      <input type="text" name="follow_id" placeholder="writetweet">
+
+      <input type="submit" name="follow" value="팔로우">
+    </form> 
+    <form class="follow" action="http://localhost:5000/unfollow" method="POST">
+      <input type="text" name="follow_id" placeholder="writetweet">
+      <input type="submit" name="unfollow" value="언팔로우">
+    </form>
+  </div>
+
+  <form class="timeline" action="http://localhost:5000/timeline" method="GET">
+    <input type="submit" name="" value="타임라인">
+  </form>
+
+
+
+{% else %}
+<h2>Login</h2>
+<form action="http://localhost:5000/login" method="POST">
+  <input type="username" name="name" placeholder="Username">
+  <input type="password" name="password" placeholder="Password">
+  <input type="submit" value="Log in">
+</form>
+
+{% endif %}
+{% endblock %}
+ 
