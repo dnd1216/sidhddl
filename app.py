@@ -1,5 +1,7 @@
 import jwt
 import bcrypt
+import webbrowser
+
 from flask_cors import CORS
 
 from flask import Flask, jsonify, request, current_app, render_template, session, Response, g
@@ -157,6 +159,11 @@ def create_app(test_config = None):
     @app.route("/ping",methods=['GET'])
     def pingpong():
         return "pong"
+
+    @app.route("/",methods=['POST'])
+    def main():
+        a = webbrowser.open('http://localhost:5000/signup.html')
+        return a
 
     @app.route("/sign-up", methods=['POST'])
     def sign_up():

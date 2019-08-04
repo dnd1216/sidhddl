@@ -1,9 +1,9 @@
 from sqlalchemy import create_engine, text
 
 db = {
-    'user' : 'dnd',
+    'user' : 'root',
     'password' : '12345678',
-    'host' : 'root',
+    'host' : 'localhost',
     'port' : 3306,
     'database' : 'miniter'
 }
